@@ -222,9 +222,18 @@ const MenuItems: React.FC<MenuItemsProps> = props => {
           id: "menuItemsHeader"
         })}
         toolbar={
-          <Button color="primary" disabled={!canUndo} onClick={onUndo}>
-            <FormattedMessage {...buttonMessages.undo} />
-          </Button>
+          <div>
+            <Button color="primary" onClick={onItemAdd}>
+              <FormattedMessage
+                defaultMessage="Create new item"
+                description="add new menu item"
+                id="menuItemsAddItem"
+              />
+            </Button>
+            <Button color="primary" disabled={!canUndo} onClick={onUndo}>
+              <FormattedMessage {...buttonMessages.undo} />
+            </Button>
+          </div>
         }
       />
       <div
